@@ -37,7 +37,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type(),},
+            verify=True,
         )
 
         resp = self.base_resource.get()
@@ -66,7 +67,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.get()
@@ -96,7 +98,8 @@ class ResourceTestCase(unittest.TestCase):
             files=None,
             params=None,
             headers={"content-type": self.base_resource._store["serializer"].get_content_type(),
-                     "accept": self.base_resource._store["serializer"].get_content_type()}
+                     "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.options()
@@ -129,7 +132,8 @@ class ResourceTestCase(unittest.TestCase):
             files=None,
             params=None,
             headers={"content-type": self.base_resource._store["serializer"].get_content_type(),
-                     "accept": self.base_resource._store["serializer"].get_content_type()}
+                     "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.head()
@@ -163,7 +167,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.post(data={'foo': 'bar'})
@@ -192,7 +197,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.post(data={'foo': 'bar'})
@@ -226,7 +232,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.patch(data={'foo': 'bar'})
@@ -255,7 +262,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.patch(data={'foo': 'bar'})
@@ -289,7 +297,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.put(data={'foo': 'bar'})
@@ -318,7 +327,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.put(data={'foo': 'bar'})
@@ -377,7 +387,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.get()
@@ -488,7 +499,8 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.get()
@@ -537,9 +549,42 @@ class ResourceTestCase(unittest.TestCase):
             data=None,
             files=None,
             params=None,
-            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()}
+            headers={"content-type": self.base_resource._store["serializer"].get_content_type(), "accept": self.base_resource._store["serializer"].get_content_type()},
+            verify=True,
         )
 
         resp = self.base_resource.post(data={'foo': 'bar'})
         expected = b'Pr\xc3\xa9paratoire'.decode('utf8')
         self.assertEqual(resp['result'], expected)
+
+    def test_get_200_json_skip_ssl_verification(self):
+        ssl_resource = slumber.Resource(base_url="http://example/api/v1/test", format="json", append_slash=False, verify=False)
+        r = mock.Mock(spec=requests.Response)
+        r.status_code = 200
+        r.headers = {"content-type": "application/json"}
+        r.content = '{"result": ["a", "b", "c"]}'
+
+        ssl_resource._store.update({
+            "session": mock.Mock(spec=requests.Session),
+            "serializer": slumber.serialize.Serializer(),
+        })
+        ssl_resource._store["session"].request.return_value = r
+
+        resp = ssl_resource._request("GET")
+
+        self.assertTrue(resp is r)
+        self.assertEqual(resp.content, r.content)
+
+        ssl_resource._store["session"].request.assert_called_once_with(
+            "GET",
+            "http://example/api/v1/test",
+            data=None,
+            files=None,
+            params=None,
+            headers={"content-type": ssl_resource._store["serializer"].get_content_type(), "accept": ssl_resource._store["serializer"].get_content_type(),},
+            verify=False,
+        )
+
+        resp = ssl_resource.get()
+        self.assertEqual(resp['result'], ['a', 'b', 'c'])
+

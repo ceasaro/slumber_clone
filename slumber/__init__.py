@@ -94,7 +94,8 @@ class Resource(ResourceAttributesMixin, object):
             if data is not None:
                 data = serializer.dumps(data)
 
-        resp = self._store["session"].request(method, url, data=data, params=params, files=files, headers=headers)
+        resp = self._store["session"].request(method, url, data=data, params=params, files=files, headers=headers,
+                                              verify=self._store["verify"] if "verify" in self._store else True)
 
         if 400 <= resp.status_code <= 499:
             exception_class = exceptions.HttpNotFoundError if resp.status_code == 404 else exceptions.HttpClientError
@@ -193,7 +194,7 @@ class API(ResourceAttributesMixin, object):
 
     resource_class = Resource
 
-    def __init__(self, base_url=None, auth=None, format=None, append_slash=True, session=None, serializer=None):
+    def __init__(self, base_url=None, auth=None, format=None, append_slash=True, session=None, serializer=None, verify=True):
         if serializer is None:
             serializer = Serializer(default=format)
 
@@ -209,6 +210,7 @@ class API(ResourceAttributesMixin, object):
             "append_slash": append_slash,
             "session": session,
             "serializer": serializer,
+            "verify": verify
         }
 
         # Do some Checks for Required Values
